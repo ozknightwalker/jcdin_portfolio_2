@@ -1,10 +1,10 @@
 from __future__ import unicode_literals
 
-from sanic.views import HTTPMethodView
-from sanic.response import text
+from app.core.views import TemplateView
 
 
-class HomeView(HTTPMethodView):
+class HomeView(TemplateView):
+    template_name = 'homepage.html'
 
-    async def get(self, request):
-        return text('Homepage')
+    def get_context_data(self, *args, **kwargs):
+        return {'title': 'Homepage'}

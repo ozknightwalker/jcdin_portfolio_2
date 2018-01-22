@@ -9,7 +9,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 enable_async = sys.version_info >= (3, 6)
 
 template_env = Environment(
-    loader=PackageLoader('app', 'templates'),
+    loader=PackageLoader('jcdin', 'templates'),
     autoescape=select_autoescape(['html', 'xml']),
     enable_async=enable_async,
 )
