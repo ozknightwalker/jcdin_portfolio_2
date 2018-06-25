@@ -26,9 +26,6 @@
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
-  },
   "devDependencies": {
     "css-loader": "^0.28.11",
     "vue-loader": "^15.2.4",
