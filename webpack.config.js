@@ -1,12 +1,15 @@
 'use strict'
 
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: [
-    './jcdin/static/js/app.js'
-  ],
+  entry: {
+    app: './jcdin/static/js/app.js',
+    vendors: ['vue', 'axios']
+  },
   module: {
     rules: [
       {
@@ -16,6 +19,19 @@ module.exports = {
     ]
   },
   plugins: [
-    new VueLoaderPlugin()
-  ]
+    new VueLoaderPlugin(),
+  ],
+  resolve: {
+    alias: {
+      vue: "./node_modules/vue/dist/vue.common.js"
+    },
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true
+      })
+    ]
+  }
 }
