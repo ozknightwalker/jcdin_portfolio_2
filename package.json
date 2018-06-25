@@ -1,0 +1,40 @@
+{
+  "name": "portfolio_2",
+  "version": "1.0.0",
+  "description": "Jc Din Portfolio v2",
+  "main": "None",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozknightwalker/jcdin_portfolio_2.git"
+  },
+  "keywords": [
+    "python3.6",
+    "sanic",
+    "vuejs"
+  ],
+  "author": "Jc Din",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozknightwalker/jcdin_portfolio_2/issues"
+  },
+  "homepage": "https://github.com/ozknightwalker/jcdin_portfolio_2#readme",
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "vue-loader": "^15.2.4",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8"
+  }
+}
