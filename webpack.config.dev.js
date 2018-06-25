@@ -4,9 +4,10 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   mode: 'development',
-  entry: [
-    './jcdin/static/js/app.js'
-  ],
+  entry: {
+    app: './jcdin/static/js/app.js',
+    vendors: ['vue', 'axios']
+  },
   module: {
     rules: [
       {

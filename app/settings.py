@@ -30,6 +30,10 @@ app.config.from_object(dict(
 app.config.update(COMPRESS_SETTINGS)
 Compressor(app)
 
+app.static('/static', './dist')
+app.url_for('static', filename='app.js')
+app.url_for('static', filename='vendors.js')
+
 RUNNER_CONFIG = {
     'host': os.environ.get('HOST', '0.0.0.0'),
     'port': int(os.environ.get('PORT', 8000)),
