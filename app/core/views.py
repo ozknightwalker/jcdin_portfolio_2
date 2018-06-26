@@ -11,9 +11,10 @@ from app.core.exceptions import ImproperlyConfigured
 class View(HTTPMethodView):
     methods = ()
 
-    def dispatch(self, request):
+    def dispatch_request(self, request):
         if request.method.lower() not in self.methods:
             raise NotFound("Method Not Allowed", status_code=405)
+        return super().dispatch_request(request)
 
 
 class ContextMixin(object):
@@ -30,12 +31,13 @@ class TemplateResponseMixin(object):
     def get_template(self):
         if self.template_name is None:
             error_msg = '{} `template_name` is not provided'.format(
-                self.__class__.__name__, )
+                self.__class__.__name__)
             raise ImproperlyConfigured(error_msg)
         try:
             template = template_env.get_template(self.template_name)
         except Exception:
-            raise
+            error_msg = 'Template {} not found'.format(self.template_name)
+            raise ImproperlyConfigured(error_msg)
         else:
             return template
 
