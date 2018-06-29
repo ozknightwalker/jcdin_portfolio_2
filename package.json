@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --config webpack.config.dev.js",
-    "build:prod": "webpack --config webpack.config.js"
+    "build:prod": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.dev.js --watch"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,12 @@
   },
   "homepage": "https://github.com/ozknightwalker/jcdin_portfolio_2#readme",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "style-loader": "^0.21.0",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "vue": "^2.5.16",
+    "vue-material": "^1.0.0-beta-10.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
