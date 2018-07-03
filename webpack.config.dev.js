@@ -3,8 +3,6 @@
 const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
 const webpack = require('webpack');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const BaseConfig = {
     mode: 'development'
@@ -35,6 +33,13 @@ var AppConfig = Object.assign({}, BaseConfig, {
   plugins: [
     new VueLoaderPlugin(),
   ],
+  resolve: {
+    alias: {
+      vue: path.resolve(__dirname, 'node_modules/vue/dist/vue.esm.js'),
+      source: path.resolve(__dirname, 'jcdin/static/js'),
+      components: path.resolve(__dirname, 'jcdin/static/js/vue/components'),
+    }
+  }
 });
 
 var ServiceWorkerConfig = Object.assign({}, BaseConfig,{

@@ -9,20 +9,15 @@ var urlsToCache = [
 self.addEventListener('install', function(event) {
     console.log("Service Worker installed");
     event.waitUntil(
-      caches.match(event.request)
-        .then(response => {
-          if (response) {
-            return response;
-          }
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              return cache.addAll(urlsToCache);
-            }).then(() => {
-              // notify user on offline ready
-            }).catch(() => {
-              // something went wrong on caching
-            })
+      caches.open(CACHE_NAME)
+        .then(cache => {
+          return cache.addAll(urlsToCache);
         })
+        // }).then(() => {
+        //   // notify user on offline ready
+        // }).catch(() => {
+        //   // something went wrong on caching
+        // })
     );
 });
 
