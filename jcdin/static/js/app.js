@@ -12,17 +12,3 @@ const app = new Vue({
     components: { App },
     template: '<App/>'
 });
-
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
-      .then(reg => {
-        // registration worked
-        console.log('Registration succeeded. Scope is ' + reg.scope);
-      }).catch(error => {
-        // registration failed
-        console.log('Registration failed with ' + error);
-      });
-  });
-}
