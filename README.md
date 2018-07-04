@@ -1,19 +1,20 @@
 This is my portfolio version 2
 
-##Tech:
-- python3.6
-- sanic (backend)
-- vuejs (frontend)
-- docker
+## Tech:
+- Python3.6
+- Sanic Python
+- VueJS
+- Docker
+- Jinja2 (Templating)
 
-# Sections
+## Sections
 - [How to run the project locally](#how-to-run-the-project)
 
 ## How to Run the project
 1. [using python](#run-locally-using-python)
 2. [using dockler](#run-locally-using-docker)
 
-##Run locally using python
+## Run locally using python
 1. Clone the project
 2. Create a virtual environment with python3.6
 ```sh
@@ -45,7 +46,7 @@ python manage.py
 ```
 5. to stop, just do the usual `CTRL` + `C` to terminate
 
-##Run locally using docker
+## Run locally using docker
 1. Clone the project
 2. Install docker if you don't have it yet [instruction/guide](https://docs.docker.com/get-started/#prepare-your-docker-environment)
 3. Install npm and npm packages then do a build
@@ -65,10 +66,10 @@ docker build -f /docker/Dockerfile . -t portfolio:v1
 5. Run the newly built docker image locally
 ```sh
 # -d means to run in background so you can reuse the terminal for other stuff
-docker run -d -p 8000 -t portfolio:v2
+docker run -d -p 8000:8000 -t portfolio:v1
 ```
 6. to stop, just call the docker stop {CONTAINER_ID} then its done
-```
+```sh
 # to know the docker container ID do
 docker ps
 # docker ps will list all running containers
