@@ -1,0 +1,22 @@
+*.pyc
+# GIT
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+
+# Distribution
+node_modules/
+*.js
+*.json
+
+# Virtual environment
+venv/
+
+# Extras
+*.md
+Procfile
+runtime.txt
+!jcdin/static/js/sw.js
+builder.py
