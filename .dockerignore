@@ -5,6 +5,7 @@
 
 # Docker
 Dockerfile
+docker/
 
 # Distribution
 node_modules/
