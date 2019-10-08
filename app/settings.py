@@ -38,5 +38,6 @@ RUNNER_CONFIG = {
     'host': os.environ.get('HOST', '0.0.0.0'),
     'port': int(os.environ.get('PORT', 8000)),
     'debug': bool(os.environ.get('DEBUG', False)),
+    'return_asyncio_server': True,
     # 'workers': int(cpu_count() / 2),
 }
