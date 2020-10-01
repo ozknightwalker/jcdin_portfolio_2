@@ -9,8 +9,6 @@ docker/
 
 # Distribution
 node_modules/
-*.js
-*.json
 
 # Virtual environment
 venv/
